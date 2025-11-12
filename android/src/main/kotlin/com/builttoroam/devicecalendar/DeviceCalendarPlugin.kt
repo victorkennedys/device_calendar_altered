@@ -165,7 +165,7 @@ class DeviceCalendarPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                 val calendarName = call.argument<String>(CALENDAR_NAME_ARGUMENT)
                 val calendarColor = call.argument<String>(CALENDAR_COLOR_ARGUMENT)
                 val localAccountName = call.argument<String>(LOCAL_ACCOUNT_NAME_ARGUMENT)
-                val localAccountType = call.argument<String>("accountType")
+                val localAccountType = call.argument<String>("localAccountType")
 
                 _calendarDelegate.createCalendar(
                     calendarName!!,

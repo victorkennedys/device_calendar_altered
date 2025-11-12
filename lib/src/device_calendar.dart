@@ -298,7 +298,7 @@ class DeviceCalendarPlugin {
             localAccountName?.isEmpty ?? true
                 ? 'Device Calendar'
                 : localAccountName,
-        "accountType": accountType ?? "LOCAL"
+        "localAccountType": accountType ?? "LOCAL"
       },
     );
   }
