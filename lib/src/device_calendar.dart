@@ -276,6 +276,7 @@ class DeviceCalendarPlugin {
     String? calendarName, {
     Color? calendarColor,
     String? localAccountName,
+    String? accountType,
   }) async {
     return _invokeChannelMethod(
       ChannelConstants.methodNameCreateCalendar,
@@ -296,7 +297,8 @@ class DeviceCalendarPlugin {
         ChannelConstants.parameterNameLocalAccountName:
             localAccountName?.isEmpty ?? true
                 ? 'Device Calendar'
-                : localAccountName
+                : localAccountName,
+        "accountType": accountType ?? "LOCAL"
       },
     );
   }
@@ -400,7 +402,8 @@ class DeviceCalendarPlugin {
     final result = await _invokeChannelMethod(
       ChannelConstants.methodNameUpdateCalendarColor,
       arguments: () => <String, dynamic>{
-        ChannelConstants.parameterNameCalendarId: Platform.isAndroid ? int.tryParse(calendarId) : calendarId,
+        ChannelConstants.parameterNameCalendarId:
+            Platform.isAndroid ? int.tryParse(calendarId) : calendarId,
         ChannelConstants.parameterNameCalendarColorKey: calendarColor?.colorKey,
         ChannelConstants.parameterNameCalendarColor: color?.value,
       },

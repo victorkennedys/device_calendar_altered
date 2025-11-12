@@ -314,6 +314,7 @@ class CalendarDelegate(binding: ActivityPluginBinding?, context: Context) :
         calendarName: String,
         calendarColor: String?,
         localAccountName: String,
+        localAccountType: String,
         pendingChannelResult: MethodChannel.Result
     ) {
         val contentResolver: ContentResolver? = _context?.contentResolver
@@ -331,7 +332,7 @@ class CalendarDelegate(binding: ActivityPluginBinding?, context: Context) :
         values.put(CalendarContract.Calendars.NAME, calendarName)
         values.put(CalendarContract.Calendars.CALENDAR_DISPLAY_NAME, calendarName)
         values.put(CalendarContract.Calendars.ACCOUNT_NAME, localAccountName)
-        values.put(CalendarContract.Calendars.ACCOUNT_TYPE, CalendarContract.ACCOUNT_TYPE_LOCAL)
+        values.put(CalendarContract.Calendars.ACCOUNT_TYPE, localAccountType)
         values.put(
             CalendarContract.Calendars.CALENDAR_ACCESS_LEVEL,
             CalendarContract.Calendars.CAL_ACCESS_OWNER
